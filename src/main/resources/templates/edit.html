@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Student</title>
+</head>
+<body>
+<form th:object="${student}" action="/edit-student" method="post">
+    <fieldset>
+        <legend>Update Student</legend>
+        <table>
+            <tr>
+                <th>Code</th>
+                <th><input type="text" th:field="*{code}"></th>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <th><input type="text" th:field="*{firstname}"></th>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <th><input type="text" th:field="*{lastname}"></th>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <th><input type="text" th:field="*{address}"></th>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <th><input type="text" th:field="*{phonenumber}"></th>
+            </tr>
+            <tr>
+                <th>AverageGrade</th>
+                <th><input type="text" th:field="*{averagegrade}"></th>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <th><input type="text" th:field="*{status}"></th>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th><input type="text" th:field="*{email}"></th>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <th><input type="text" th:field="*{note}"></th>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <th><input type="text" th:field="*{description}"></th>
+            </tr>
+            <tr>
+                <th>category</th>
+                <td><select th:field="*{department}">
+                    <option th:each="p : ${department}" th:text="${p.name}" th:value="${p.id}"></option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><input type="submit"value="Update"></td>
+                <td><input type="reset"value="Cancel"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>

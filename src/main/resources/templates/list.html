@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Student</title>
+</head>
+<body>
+<h1>List Student</h1>
+<table border="1">
+    <tr>
+        <th>Code</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Address</th>
+        <th>Phone number</th>
+        <th>AverageGrade</th>
+        <th>Status</th>
+        <th>Email</th>
+        <th>Note</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="student:${students}">
+        <tr>
+        <td th:text="${student.note}"></td>
+        <td th:text="${student.firstname}"></td>
+        <td th:text="${student.lastname}"></td>
+        <td th:text="${student.address}"></td>
+        <td th:text="${student.phonenumber}"></td>
+        <td th:text="${student.averagegrade}"></td>
+        <td th:text="${student.status}"></td>
+        <td th:text="${student.email}"></td>
+        <td th:text="${student.note}"></td>
+        <td th:text="${student.description}"></td>
+        <td><a th:href="@{/edit-student/__${student.id}__ }">Edit</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

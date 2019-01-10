@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Student</title>
+</head>
+<body>
+<th:block th:if="${message}">
+    <p th:text="${message}">
+    </p>
+</th:block>
+<form th:object="${student}" action="/create-student" method="post">
+    <fieldset>
+        <legend><h1>Create Student</h1></legend>
+        <table>
+            <tr>
+                <th>Code</th>
+                <td><input type="text" th:field="*{code}"></td>
+            </tr>
+            <tr>
+                <th>First name</th>
+                <td><input type="text" th:field="*{firstname}"></td>
+            </tr>
+            <tr>
+                <th>Last name</th>
+                <td><input type="text" th:field="*{lastname}"></td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td><input type="text" th:field="*{address}"></td>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <td><input type="text" th:field="*{phonenumber}"></td>
+            </tr>
+            <tr>
+                <th>AverageGrade</th>
+                <td><input type="text" th:field="*{averagegrade}"></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td><input type="text" th:field="*{status}"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="text" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td><input type="text" th:field="*{note}"></td>
+            </tr>
+            <tr>
+                <th>description</th>
+                <td><input type="text" th:field="*{description}"></td>
+            </tr>
+            <tr>
+                <th>Department</th>
+                <td><select th:field="*{department}">
+                    <option th:each="p :${department}" th:text="${p.name}" th:value="${p.id}"></option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Save">
+                    <input type="reset" value="Cancel">
+                </td>
+            </tr>
+        </table>
+
+    </fieldset>
+
+</form>
+</body>
+</html>
